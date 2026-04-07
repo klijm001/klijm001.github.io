@@ -1,0 +1,385 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation */
+header {
+    background: rgba(44, 62, 80, 0.95);  /* slightly transparent (95% opacity) */
+    color: white;
+    padding: 1rem 0;
+   /* position: sticky; */
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;  /* smooth transition for any changes */
+    backdrop-filter: blur(5px);  /* optional: blurs background behind header */
+}
+
+/* When scrolled, add a shadow and make it more solid */
+/*header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(44, 62, 80, 1);   fully solid on scroll 
+    backdrop-filter: blur(0); 
+} 
+*/
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #2c3e50;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+/* Sections */
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin-top: 1rem;
+    color: #2c3e50;
+}
+
+/* Projects */
+.project {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Contact list */
+.contact-info {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.contact-info li {
+    margin-bottom: 0.5rem;
+}
+
+/* Form */
+form {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+label {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #1a252f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2c3e50;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Job / Experience styling */
+.job {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.job h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.company, .date {
+    color: #555;
+    margin: 0.25rem 0;
+    font-style: italic;
+}
+
+.job ul {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+/* Timeline styles */
+.timeline-intro {
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #2c3e50;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-date {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    width: 4rem;
+    font-weight: bold;
+    color: #2c3e50;
+    background: #f9f9f9;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.timeline-content {
+    margin-left: 2.5rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+/* Responsive: on small screens, stack date above content */
+@media (max-width: 600px) {
+    .timeline {
+        padding-left: 0;
+    }
+    .timeline::before {
+        display: none;
+    }
+    .timeline-date {
+        position: static;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+    .timeline-content {
+        margin-left: 0;
+    }
+}
+
+/* Skills / Tools section */
+.skills {
+    margin-top: 2rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: #e8f4f8;
+    color: #2c3e50;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #bcd8e6;
+    transition: all 0.2s;
+}
+
+.skill-tag:hover {
+    background: #2c3e50;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Interests section */
+.interests {
+    margin-top: 2rem;
+}
+
+.interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.interest-tag {
+    background: #e8f4f8;
+    color: #2c3e50;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #bcd8e6;
+    transition: all 0.2s;
+}
+
+.interest-tag:hover {
+    background: #2c3e50;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Featured project card */
+.featured-project {
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left: 5px solid #2c3e50;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.btn {
+    display: inline-block;
+    background: #2c3e50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #1a252f;
+}
+
+.bio {
+    text-align: justify;
+}
+
+/* Publications page */
+.publications-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.publications-list li {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.pub-links {
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
+.pub-links a {
+    color: #2c3e50;
+    text-decoration: none;
+    margin-right: 0.8rem;
+}
+
+.pub-links a:hover {
+    text-decoration: underline;
+}
+
+.note {
+    font-style: italic;
+    color: #555;
+    margin-top: 0.5rem;
+}
